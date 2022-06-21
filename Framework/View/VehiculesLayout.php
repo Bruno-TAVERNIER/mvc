@@ -28,6 +28,12 @@
       </tr> 
     <?php endforeach; ?>
   </table>
+  <h2>Conducteurs:</h2>
+  <ul>
+    <?php foreach($conducteurs as $c): ?>
+      <li><?= $c['prenom']; ?> <?= $c['nom']; ?></li>
+    <?php endforeach; ?>
+  </ul>
 
   <pre><?php print_r($vw); ?></pre>
 </body>
