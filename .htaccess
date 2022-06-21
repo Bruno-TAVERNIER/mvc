@@ -1,0 +1,10 @@
+# On utilise le moteur de réécriture d'url
+RewriteEngine on
+
+# Si la page demandée n'est pas un fichier existant
+RewriteCond %{REQUEST_FILENAME} !-f
+# Si la demande n'est pas in répertoire existant
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#On redirige le tout vers index.php (contrôleur frontal)
+rewriteRule . index.php [L,QSA]
