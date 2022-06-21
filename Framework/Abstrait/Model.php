@@ -59,4 +59,18 @@ abstract class Model {
     return $stmtExec->execute($data);
   }
 
+  /* export CSV d'une table (compatible Excel) */
+  public function export() {
+    $stmtAll = self::$dbh->prepare('SELECT * FROM '.$this->table);
+    $stmtAll->execute();
+    $retour = $stmtAll->fetchAll(\PDO::FETCH_ASSOC);
+    $fh = fopen(EXPORTS.'export_'.$this->tbl.'.csv', 'w');
+    //ligne d'entête
+    fputcsv($fh, array_keys($retour[0]), ';');
+    foreach($retour as $ligne){
+      fputcsv($fh, $ligne, ";");
+    }
+    fclose($fh);
+  }
+
 }

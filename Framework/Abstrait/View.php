@@ -31,5 +31,6 @@ class View {
   
   // pdf
 
-  
+  // buffer PHP ob_start(), ob_end_flush(), ob_clean()
+  // fetch().then().then();
 }
