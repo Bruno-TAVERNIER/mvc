@@ -72,5 +72,4 @@ abstract class Model {
     }
     fclose($fh);
   }
-
 }
