@@ -5,6 +5,10 @@ namespace Abstrait;
 abstract class Model {
   /** @var resource Connexion PDO */
   protected static $dbh = null;
+  /** nom de la table (idem Modèle) */
+  protected $tbl;
+  /** identifiant de la table (id_tbl) */ 
+  protected $ident;
 
   /** constructeur privé (singleton) */
   private function __construct() {}
@@ -21,6 +25,12 @@ abstract class Model {
         echo $e->getMessage();
       }
     }
+    /* si on veut que le nomde la classe et de la table soient identique...
+      et si on veut que l'id soit id_ + nom table */
+    $this->tbl = get_class($this);
+    $this->tbl = strtolower(substr($this->tbl, strripos($this->tbl, '\\') + 1));
+    $this->ident = 'id_' .  $this->tbl;
+    file_put_contents('model.txt', $this->tbl . ' ' . $this->ident . PHP_EOL, FILE_APPEND);
     return self::$dbh;
   }
 
