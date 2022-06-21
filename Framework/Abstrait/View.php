@@ -16,6 +16,14 @@ class View {
   public function afficher()
   {
     extract($this->tParams); //transformation de tableau en variables
+    //include header.php
     include $this->sVue.'Layout.php';
+    //include footer.php
   }
+
+  // retour d'un JSON
+
+  //retour d'un XML
+
+  
 }
