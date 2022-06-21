@@ -11,9 +11,16 @@ class Routeur {
     $this->routes = $routes; 
     $this->request = $request;
   }
+  // si on veut de la sécurité =>  [REMOTE_ADDR] => 192.168.1.5
+  // ou par nom de machine / utilisateur:   [COMPUTERNAME] => DEV02 / [USERNAME] => Bruno
 
   //routes => tableau (path & controller/methode)
   //request => url demandée après http://localhost/mvc
+
+  // ne gère pas les variables dans les url
+  // http://localhost/mvc/produit/:id => indexCtrl/produit($id)
+  // http://localhost/mvc/produit?id=123 => indexCtrl/produit($id)  [QUERY_STRING] => id=5&cat=3
+  // ne gere pas non plus GET, POST, DELETE, PUT, PATCH, ... =>  [REQUEST_METHOD] => GET
   public function getController() :string {
     foreach($this->routes as $r){
       if($r['path'] == $this->request) $this->controller = $r['ctrl'];

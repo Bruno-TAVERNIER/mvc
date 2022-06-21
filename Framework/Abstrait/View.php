@@ -25,5 +25,11 @@ class View {
 
   //retour d'un XML
 
+  //txt
+
+  //csv
+  
+  // pdf
+
   
 }

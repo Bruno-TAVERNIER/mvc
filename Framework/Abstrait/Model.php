@@ -30,7 +30,7 @@ abstract class Model {
     $this->tbl = get_class($this);
     $this->tbl = strtolower(substr($this->tbl, strripos($this->tbl, '\\') + 1));
     $this->ident = 'id_' .  $this->tbl;
-    file_put_contents('model.txt', $this->tbl . ' ' . $this->ident . PHP_EOL, FILE_APPEND);
+    //file_put_contents('model.txt', $this->tbl . ' ' . $this->ident . PHP_EOL, FILE_APPEND);
     return self::$dbh;
   }
 
@@ -58,4 +58,5 @@ abstract class Model {
     $stmtExec = self::$dbh->prepare($requete);
     return $stmtExec->execute($data);
   }
+
 }

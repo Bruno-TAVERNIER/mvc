@@ -2,6 +2,7 @@
 /* $_GET, $_POST, $_REQUEST, $_SERVER, $_ENV, $_SESSION, $_COOKIE */
 /*echo '<pre>';
 print_r($_SERVER);
+print_r($_ENV);
 echo '</pre>';*/
 
 // le répertoire dans lequel se trouve l'appli
@@ -27,14 +28,12 @@ $routeur = new Routeur($routes, $request);
 //par convention (et simplicité) le controleur appelé se nomme
 // comme la page suivi de Controller
 try {
-
-
+  // firewall si besoin (adresse IP, SSO, AD, ACL)
   $controller = $routeur->getController(); //'\Controller\\'.$request.'Controller';
   $methode = $routeur->getMethode();
   //echo $controller;
   $app = new $controller;
   $app->$methode();
-
 }
 catch(Exception $e){
   echo 'oups';
@@ -48,5 +47,6 @@ if($a == 1) {
   echo 'ok'; 
   $b = 'oui';
 }*/
-
+// DRY : Don't Repeat Yourself
+// DNRTW: Do Not Reinvent The Wheel
 ?>
