@@ -29,3 +29,4 @@ function autoload($className) {
 }
 //ajout à la file d'attente des chargements
 spl_autoload_register('autoload');
+?>
