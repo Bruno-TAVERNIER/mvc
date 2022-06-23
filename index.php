@@ -50,5 +50,6 @@ if($a == 1) {
 // DRY : Don't Repeat Yourself
 // DNRTW: Do Not Reinvent The Wheel
 
-//Pour télécharger une bibliothèque depuis composer: composer require phpmailer/phpmailer
+// Pour télécharger une bibliothèque depuis composer: composer require phpmailer/phpmailer
+// FPDF - TCPDF
 ?>

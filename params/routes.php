@@ -6,6 +6,8 @@ $routes = [
   ['path' => '/util', 'ctrl' => 'IndexControler/util'],
   ['path' => '/login', 'ctrl' => 'SecurityControler/login'],
   ['path' => '/vehicules', 'ctrl' => 'indexControler/vehicules'],
-  ['path' => '/vehicule/:id', 'ctrl' => 'indexControler/vehicule'],
+  ['path' => '/vehicule', 'ctrl' => 'indexControler/vehicule'],
+  ['path' => '/rest', 'ctrl' => 'indexControler/rest1'],
+  ['path' => '/rest2', 'ctrl' => 'indexControler/rest2'],
 ];
 ?>

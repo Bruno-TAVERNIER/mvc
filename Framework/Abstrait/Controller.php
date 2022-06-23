@@ -17,4 +17,21 @@ abstract class Controller {
     $objView = new View($sVue, $tParams);
     $objView->afficher(); 
   }
+
+  /**
+   * Afficher une chaine pour API REST
+   * @param string $chaine Chaine à afficher
+   */
+  public function afficher($chaine){
+    echo $chaine;
+  }
+
+  /** Afficher une conversion JSON d'un objet ou tableau
+   * @param mixed $tParams Infos à retourner en JSON
+   */
+  public function json($tParams) {
+    echo json_encode($tParams);
+  }
+
+  // plus affichage binaire (image en base64 par ex)
 }

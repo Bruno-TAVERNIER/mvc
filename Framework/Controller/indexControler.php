@@ -36,5 +36,29 @@ class IndexControler extends Controller {
                              'vw' => $vw,
                              'conducteurs' => $liste2]);
   }
+
+  public function rest1() {
+    try {
+      $conducteur = new Conducteur();
+    }
+    catch(\Exception $e) {
+      echo $e->getMessage();
+    }
+    $alex = $conducteur->find(5); 
+    //affichage
+    $this->afficher('Bonjour ' . $alex['prenom']);
+  }
+
+  public function rest2(){
+    try {
+      $conducteur = new Conducteur();
+    }
+    catch(\Exception $e) {
+      echo $e->getMessage();
+    }
+    $liste = $conducteur->findAll();
+    $this->json($liste);
+  }
+
   /* silex : version ultra light de symfony 4 */
 }
